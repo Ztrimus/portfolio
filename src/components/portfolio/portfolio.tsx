@@ -223,7 +223,7 @@ export default async function Portfolio() {
                 <div id="research-id" className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Research</div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Advancing the Frontiers of AI</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I am actively engaged in cutting-edge research to push the boundaries of what's possible with
+                  I am actively engaged in cutting-edge research to push the boundaries of what&apos;s possible with
                   artificial intelligence.
                 </p>
               </div>
@@ -329,7 +329,7 @@ export default async function Portfolio() {
             <div id="contact-id" className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Contact</div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Get in Touch</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-                Have a project in mind or want to learn more about my work? Fill out the form below and I'll get back to
+                Have a project in mind or want to learn more about my work? Fill out the form below and I&apos;ll get back to
                 you as soon as possible.
               </p>
             </div>
