@@ -1,6 +1,43 @@
+'use client'
 import Link from "next/link"
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip"
 import { BrainIcon, BriefcaseIcon, TrophyIcon, MicroscopeIcon, BookOpenIcon, FileTextIcon, MailIcon, PinIcon, PowerIcon, BoltIcon, TrophyIcon as MedalIcon, StarIcon } from "@/components/shared/icons"
+import { useEffect, useState } from "react";
+
+function isSectionInViewport(section: string): boolean {
+  const [isInView, setIsInView] = useState(false);
+  useEffect(() => {
+    const checkViewport = () => {
+      if (document) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          setIsInView(
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+          );
+        } else {
+          setIsInView(false);
+        }
+      }
+    };
+
+    checkViewport(); // Check on mount
+
+    window.addEventListener('scroll', checkViewport);
+    window.addEventListener('resize', checkViewport);
+
+    return () => {
+      window.removeEventListener('scroll', checkViewport);
+      window.removeEventListener('resize', checkViewport);
+    };
+  }, [section]);
+
+  return isInView;
+}
+
 
 export default function Navbar() {
     return (
@@ -9,7 +46,8 @@ export default function Navbar() {
           <TooltipProvider>
             <Link
               href="#"
-              className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
+              className={(isSectionInViewport('') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 hover:text-foreground duration-700") + 
+                " group shrink-0 gap-2 flex h-9 w-9 items-center justify-center rounded-full text-lg md:h-8 md:w-8 md:text-base bg-primary font-semibold text-primary-foreground"}
               prefetch={false}
             >
               <BrainIcon className="h-4 w-4 transition-all group-hover:scale-110" />
@@ -19,7 +57,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href="#projects"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  className={(isSectionInViewport('projects-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
                   prefetch={false}
                 >
                   <BriefcaseIcon className="h-5 w-5" />
@@ -32,7 +70,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href="#achievements"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  className={(isSectionInViewport('achievements-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
                   prefetch={false}
                 >
                   <TrophyIcon className="h-5 w-5" />
@@ -45,7 +83,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href="#research"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  className={(isSectionInViewport('research-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
                   prefetch={false}
                 >
                   <MicroscopeIcon className="h-5 w-5" />
@@ -58,7 +96,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href="#blogs"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  className={(isSectionInViewport('blogs-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
                   prefetch={false}
                 >
                   <BookOpenIcon className="h-5 w-5" />
@@ -97,7 +135,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href="#resume"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  className={(isSectionInViewport('resume-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
                   prefetch={false}
                 >
                   <FileTextIcon className="h-5 w-5" />
@@ -110,7 +148,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href="#contact"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  className={(isSectionInViewport('contact-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
                   prefetch={false}
                 >
                   <MailIcon className="h-5 w-5" />

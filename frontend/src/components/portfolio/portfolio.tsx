@@ -116,7 +116,7 @@ export default async function Portfolio() {
           <div className="container-fluid px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Featured Projects</div>
+                <div id="projects-id" className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Featured Projects</div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Innovative Solutions</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Explore a selection of my cutting-edge AI and machine learning projects that showcase my expertise and
@@ -131,7 +131,7 @@ export default async function Portfolio() {
               {user.projects && user.projects.map((project: any, index: number) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
-                   <Card className="flex flex-col justify-between">
+                   <Card className="flex flex-col justify-between hover:scale-105">
                    <CardHeader>
                      <CardTitle>{project.name}</CardTitle>
                      <CardDescription>
@@ -142,7 +142,7 @@ export default async function Portfolio() {
                      <div className="grid gap-2">
                        <div className="flex items-center gap-2">
                          <PinIcon className="h-5 w-5 text-muted-foreground" />
-                         <span className="text-muted-foreground">{project?.link}</span>
+                         <span className="text-muted-foreground"><a href={project?.link}>Link</a></span>
                        </div>
                      </div>
                    </CardContent>
@@ -154,7 +154,7 @@ export default async function Portfolio() {
               <CarouselPrevious />
               <CarouselNext />
               </Carousel>
-            <Card className="flex flex-col justify-between">
+            {/* <Card className="flex flex-col justify-between">
                 <CardHeader>
                   <CardTitle>Predictive Maintenance System</CardTitle>
                   <CardDescription>
@@ -178,22 +178,7 @@ export default async function Portfolio() {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            <div className="group relative overflow-hidden rounded-lg bg-background shadow-sm transition-all hover:shadow-md">
-              <img
-                src="/placeholder.svg"
-                width="550"
-                height="310"
-                alt="Project 1"
-                className="h-48 w-full object-cover transition-all group-hover:scale-105"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold">Predictive Maintenance</h3>
-                <p className="mt-2 text-muted-foreground line-clamp-2">
-                  Developed a machine learning model to predict equipment failures and optimize maintenance schedules.
-                </p>
-              </div>
-            </div>
+              </Card> */}
           </div>
           </div>
         </section>
@@ -201,7 +186,7 @@ export default async function Portfolio() {
           <div className="container-fluid px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg px-3 py-1 text-sm">Achievements</div>
+                <div id="achievements-id" className="inline-block rounded-lg px-3 py-1 text-sm bg-background">Achievements</div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Recognized for Excellence</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   I have been honored with various awards and recognitions for my contributions to the field of AI and
@@ -242,7 +227,7 @@ export default async function Portfolio() {
           <div className="container-fluid px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Research</div>
+                <div id="research-id" className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Research</div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Advancing the Frontiers of AI</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   I am actively engaged in cutting-edge research to push the boundaries of what's possible with
@@ -287,7 +272,7 @@ export default async function Portfolio() {
           <div className="container-fluid px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Blogs</div>
+                <div id="blogs-id" className="inline-block rounded-lg bg-background px-3 py-1 text-sm">Blogs</div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Sharing Knowledge and Insights</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Check out my latest blog posts where I share my thoughts, experiences, and learnings in the field of
@@ -348,6 +333,7 @@ export default async function Portfolio() {
         <div className="container-fluid px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
+            <div id="contact-id" className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Contact</div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Get in Touch</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
                 Have a project in mind or want to learn more about my work? Fill out the form below and I'll get back to
