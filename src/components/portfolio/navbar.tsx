@@ -4,8 +4,9 @@ import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/comp
 import { BrainIcon, BriefcaseIcon, TrophyIcon, MicroscopeIcon, BookOpenIcon, FileTextIcon, MailIcon, PinIcon, PowerIcon, BoltIcon, TrophyIcon as MedalIcon, StarIcon } from "@/components/shared/icons"
 import { useEffect, useState } from "react";
 
-function isSectionInViewport(section: string): boolean {
+function useSectionInViewport(section: string): boolean {
   const [isInView, setIsInView] = useState(false);
+
   useEffect(() => {
     const checkViewport = () => {
       if (document) {
@@ -46,7 +47,7 @@ export default function Navbar() {
           <TooltipProvider>
             <Link
               href="#"
-              className={(isSectionInViewport('') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 hover:text-foreground duration-700") + 
+              className={(useSectionInViewport('') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 hover:text-foreground duration-700") + 
                 " group shrink-0 gap-2 flex h-9 w-9 items-center justify-center rounded-full text-lg md:h-8 md:w-8 md:text-base bg-primary font-semibold text-primary-foreground"}
               prefetch={false}
             >
@@ -57,7 +58,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href="#projects"
-                  className={(isSectionInViewport('projects-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
+                  className={(useSectionInViewport('projects-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
                   prefetch={false}
                 >
                   <BriefcaseIcon className="h-5 w-5" />
@@ -70,7 +71,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href="#achievements"
-                  className={(isSectionInViewport('achievements-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
+                  className={(useSectionInViewport('achievements-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
                   prefetch={false}
                 >
                   <TrophyIcon className="h-5 w-5" />
@@ -83,7 +84,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href="#research"
-                  className={(isSectionInViewport('research-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
+                  className={(useSectionInViewport('research-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
                   prefetch={false}
                 >
                   <MicroscopeIcon className="h-5 w-5" />
@@ -96,7 +97,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href="#blogs"
-                  className={(isSectionInViewport('blogs-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
+                  className={(useSectionInViewport('blogs-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
                   prefetch={false}
                 >
                   <BookOpenIcon className="h-5 w-5" />
@@ -135,7 +136,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href="#resume"
-                  className={(isSectionInViewport('resume-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
+                  className={(useSectionInViewport('resume-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
                   prefetch={false}
                 >
                   <FileTextIcon className="h-5 w-5" />
@@ -148,7 +149,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href="#contact"
-                  className={(isSectionInViewport('contact-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
+                  className={(useSectionInViewport('contact-id') ? "bg-accent text-accent-foreground" :"text-muted-foreground hover:scale-125 duration-700 hover:text-foreground") + " flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"}
                   prefetch={false}
                 >
                   <MailIcon className="h-5 w-5" />
