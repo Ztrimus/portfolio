@@ -1,0 +1,15 @@
+"subtitle": "I'm Creative, Unique and Different?",
+
+Till 12th (Jul 2015) didn't know whay is computer science
+205
+
+"Timeline": [
+    {
+      "year":"May 2015",
+      "events": ["unaware of coding world", "wannabe dancer"]
+    },
+    {
+      "year":"Aug 2015",
+      "events": ["saw the first ray of coding", "Started study in electronics engineering"]
+    }
+  ],
