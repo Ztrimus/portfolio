@@ -209,8 +209,10 @@
       "from": "May 2024",
       "to": "Aug 2024",
       "description": [
-        "Spearheaded generative AI agent for financial queries, processing unstructured data using RAG to enhance support by 6x",
-        "Built LLM-driven summary dashboard with CoT reasoning, integrated with Salesforce via Kafka, Boost advisor output by 40%"
+        "Spearheaded generative AI agent for financial queries, processing unstructured data using RAG to enhance support by 6x. Developed AI-driven calculation explainability tools: leveraged LangGraph, OpenAI, and custom codebase retrieval to auto-explain complex financial and academic calculations (e.g., excess fund amounts), enhancing transparency for advisors and students.",
+        "Built LLM-driven summary dashboard with CoT reasoning, integrated with Salesforce via Kafka, Boost advisor output by 40%",
+        "Pioneered knowledge-base integration from codebase: implemented pipelines to extract code snippets, link with LLMs, and generate step-by-step explanations of system logic, improving developer productivity and reducing onboarding time.",
+        "Designed and implemented a “Text-to-Visual” service that automatically converts free-form text into structured visuals (flowcharts, mind maps, timelines, comparison tables). Integrated the service with collaboration tools (Slack, Teams, internal CRMs) to enable instant generation of diagrams within existing workflows. Engineered natural language parsing pipeline using LLMs to identify entities, relationships, and structures from unstructured input for accurate visual generation. Built interactive, production-ready frontend using React, Tailwind, shadcn/ui, and Recharts to render clean, dynamic, and exportable visuals for business and technical teams. Enabled multiple visualization modes (process flows, org charts, brainstorm mind maps, chronological timelines) improving clarity and decision-making in cross-team discussions. Improved productivity and collaboration by reducing manual diagramming effort, standardizing visuals, and accelerating documentation across engineering and operations."
       ]
     },
     {
