@@ -22,6 +22,18 @@
 		"Findings highlight that sentence-level paraphrasing often improves safety, while character-level typos can bypass guardrails, underscoring the need for perturbation-aware safety evaluation and training."
       ]
     },
+	  {
+	"name": "LLM-facilitated Pipeline for Personalized Resume Generation",
+    "type": "Publication",
+    "link": "https://dl.acm.org/doi/10.1145/3626772.3657680",
+    "from": "Dec 2023",
+    "to": "Jul 2024",
+    "description": [
+        "Authored & published research paper at ACM’s SIGIR conference on ML pipeline optimized for user personalization using LLM",
+		"Formulated novel user personalization metrics, setting performance benchmarks for AI-enhanced resume evaluation",
+		"Released open-source Python library integrating information retrieval leveraging web scraping, used by 1000+ users"
+	]
+},
     {
       "name": "Streamlining Job Applications with LLM Automation Pipeline",
       "type": "Project",
