@@ -10,6 +10,19 @@
   "devpost": "devpost.com/Ztrimus",
   "projects": [
     {
+      "name": "Can Typos Cause Harm? The Impact of Imperfect Input on LLM Safety",
+      "type": "Publication",
+      "link": "https://github.com/Ztrimus/llm-sensitivity",
+      "from": "Jan 2025",
+      "to": "May 2025",
+      "description": [
+        "First systematic study on how semantic-preserving prompt perturbations (typos, paraphrases, rephrasings) affect LLM safety alignment across 14 perturbation types, 11 harm categories, and 5 open models.",
+		"Introduced the concept of safety flip rates (Safe→Unsafe regressions vs. Unsafe→Safe improvements), revealing that even minor perturbations flip model behavior in ~30%+ of cases, with fragile alignment across content categories (e.g., hate speech vs. child safety).",
+		"Released open-source framework & dataset augmentation pipeline (GitHub: Ztrimus/llm-sensitivity) for large-scale safety robustness evaluation, enabling future benchmarking and noise-robust alignment methods.",
+		"Findings highlight that sentence-level paraphrasing often improves safety, while character-level typos can bypass guardrails, underscoring the need for perturbation-aware safety evaluation and training."
+      ]
+    },
+    {
       "name": "Streamlining Job Applications with LLM Automation Pipeline",
       "type": "Project",
       "link": "https://pypi.org/project/zlm/",
